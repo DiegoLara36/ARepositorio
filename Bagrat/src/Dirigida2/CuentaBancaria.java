@@ -2,34 +2,39 @@ package Dirigida2;
 
 public class CuentaBancaria {
 
-    private int numerodecuenta;
-    private int dni;
+    private static long numerodecuenta=123456789;
+    private long dni;
     private double saldoactual;
     private double interesanual; // porcentaje
 
-    public CuentaBancaria(int numerodecuenta, int dni, double saldoactual, double interesanual) {
-        this.numerodecuenta = numerodecuenta;
+    private int dia;
+    private long numerocuentadeobjeto;
+
+    public CuentaBancaria(long dni, double saldoactual, double interesanual) {
+        this();
         this.dni = dni;
         this.saldoactual = saldoactual;
         this.interesanual = interesanual;
     }
 
     public CuentaBancaria(){
+        this.numerocuentadeobjeto=CuentaBancaria.numerodecuenta;
+        CuentaBancaria.numerodecuenta++;
     }
 
-    public int getNumerodecuenta() {
-        return numerodecuenta;
+    public long getNumerodecuenta() {
+        return numerocuentadeobjeto;
     }
 
-    public void setNumerodecuenta(int numerodecuenta) {
+  /*  public void setNumerodecuenta(int numerodecuenta) {
         this.numerodecuenta = numerodecuenta;
-    }
+    }*/
 
-    public int getDni() {
+    public long getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(long dni) {
         this.dni = dni;
     }
 
@@ -52,8 +57,18 @@ public class CuentaBancaria {
     //metodo actualizarSaldo()??? cuantos dias fechas ????
 
     // metodo Ingresar(dobule) ingresar cantidad a la cueta
+   public void setDia(int dia){
+        this.dia=dia;
+    }
+    public int getDia(){
+        return dia;
+    }
+    public void actualizarSaldo(){
+        saldoactual=saldoactual*((interesanual/360)*(double)dia+1);
+   }
+
     public void setIngresar(double abono){
-       saldoactual=saldoactual+abono;
+       saldoactual=saldoactual+abono;//abono pos
     }
 
     //MEtodo Retirar(double) permitira sacar una cantidad de la cuenta (si hay saldo)
@@ -67,10 +82,25 @@ public class CuentaBancaria {
 
 
     //metodo imprimirDetalle() nos permiet mostrar todos los datos de la cuenta
-    public void impremirDetalle() {
+    /*public void impremirDetalle() {
         System.out.println("sus datos de cuenta son\n" + numerodecuenta + "\t" + dni + "\t" + saldoactual);
-    }
-       //metodo actualizar saldo
+    }*/
+
+
+    public void imprimirDetalle() {
+        System.out.println( "CuentaBancaria{" +
+                "dni=" + dni +
+                ", saldoactual=" + saldoactual +
+                ", interesanual=" + interesanual +
+                ", dia=" + dia +
+                ", numerocuenta=" + numerocuentadeobjeto +
+                '\'' +
+                '}'
+   );
+
+         }
+
+    //metodo actualizar saldo
     private int aux;
 
     //metodo formatear ddni:  resto = dni - dni/23, para cada caso una letra)
@@ -79,8 +109,9 @@ public class CuentaBancaria {
     public String  formatearDNI(){
         //muestra el dni formateado
         //8 digitos un guion
-        aux=dni-(dni/23);
-        switch (aux){
+        aux=((int)(dni%23));
+
+       switch (aux){
             case 0:
                 letter="T";
                 break;

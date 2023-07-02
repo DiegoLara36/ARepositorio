@@ -48,5 +48,14 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "nombre='" + nombre + '\'' +
+                ", codigo='" + codigo + '\'' +
+                ", monto=" + monto +
+                ", cantidad=" + cantidad +
+                '}';
+    }
+    // para que no me de lugar de memoria
 }

@@ -4,7 +4,7 @@ public class Venta {
 
     private String codigo;
     private Producto[] productos;
-
+    // arreglo de productos dentro del argumento del sontructor
     public String getCodigo() {
         return codigo;
     }
@@ -24,6 +24,9 @@ public class Venta {
     public Venta(String codigo, Producto[] productos) {
         this.codigo = codigo;
         this.productos = productos;
+    }
+    public Venta(){
+
     }
 }
 

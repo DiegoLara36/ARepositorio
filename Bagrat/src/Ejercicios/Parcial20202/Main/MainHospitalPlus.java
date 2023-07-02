@@ -1,0 +1,25 @@
+package Ejercicios.Parcial20202.Main;
+
+
+import static Ejercicios.Parcial20202.Main.Constante.RELACION;
+
+public class MainHospitalPlus {
+
+	/*public static void main(String[] args) {
+		HospitalPlus m = new HospitalPlus("Hospital Regional Universitario de Malaga", 7, 8);
+		m.leePacientes(RELACION);
+		System.out.println(m.pacientesPorAnio());
+		System.out.println(m.numeroDePacientesPorAnio());
+
+	}
+*/
+}
+
+/**
+ * Expected output:
+ * 
+ * <pre>
+ {1678=[Paciente [nombre='Antonio', apellido='Vivaldi', nuss='8414193157', anio=1678]], 1723=[Paciente [nombre='Adam', apellido='Smith', nuss='5186046392', anio=1723]], 1743=[Paciente [nombre='Antonio', apellido='Lavoisier', nuss='1566876261', anio=1743]], 1775=[Paciente [nombre='Andre-Marie', apellido='Ampere', nuss='7276995671', anio=1775]], 1781=[Paciente [nombre='Andres', apellido='Bello', nuss='3992731073', anio=1781]], 1788=[Paciente [nombre='Arthur', apellido='Schopenhauer', nuss='2805848874', anio=1788]], 1802=[Paciente [nombre='Alejandro', apellido='Dumas', nuss='6503158367', anio=1802]], 1809=[Paciente [nombre='Abraham', apellido='Lincoln', nuss='6669444861', anio=1809]], 1854=[Paciente [nombre='Arthur', apellido='Rimbaud', nuss='9462931693', anio=1854]], 1860=[Paciente [nombre='Antonio', apellido='Chekhov', nuss='6313288345', anio=1860]], 1870=[Paciente [nombre='Amado', apellido='Nervo', nuss='4413957112', anio=1870]], 1875=[Paciente [nombre='Albert', apellido='Schweitzer', nuss='7030339829', anio=1875], Paciente [nombre='Antonio', apellido='Machado', nuss='0673932455', anio=1875]], 1879=[Paciente [nombre='Albert', apellido='Einstein', nuss='7104083471', anio=1879]], 1881=[Paciente [nombre='Alexander', apellido='Kerensky', nuss='9051869743', anio=1881]], 1889=[Paciente [nombre='Adolfo', apellido='Hitler', nuss='5465995264', anio=1889]], 1890=[Paciente [nombre='Agatha', apellido='Chriestie', nuss='2895510826', anio=1890]], 1896=[Paciente [nombre='Andre', apellido='Breton', nuss='8365764592', anio=1896]], 1898=[Paciente [nombre='Alonso', apellido='Damaso', nuss='3885431592', anio=1898]], 1899=[Paciente [nombre='Alfred', apellido='Hitchcock', nuss='3635336290', anio=1899], Paciente [nombre='Al', apellido='Capone', nuss='3946671130', anio=1899]], 1900=[Paciente [nombre='Agustin', apellido='Lara', nuss='2876703738', anio=1900]], 1908=[Paciente [nombre='Atahualpa', apellido='Yupanqui', nuss='7263307860', anio=1908]], 1913=[Paciente [nombre='Albert', apellido='Camus', nuss='1710002791', anio=1913]], 1915=[Paciente [nombre='Anthony', apellido='Quinn', nuss='1435164914', anio=1915], Paciente [nombre='Augusto', apellido='Pinochet', nuss='5247602491', anio=1915]], 1916=[Paciente [nombre='Aldo', apellido='Moro', nuss='3745187275', anio=1916]], 1923=[Paciente [nombre='Allen', apellido='Ginsberg', nuss='5439262872', anio=1923], Paciente [nombre='Alan', apellido='Chepard', nuss='6489579680', anio=1923]], 1926=[Paciente [nombre='Allan', apellido='Greenspan', nuss='3546896340', anio=1926]], 1927=[Paciente [nombre='Antonio Carlos', apellido='Jobim', nuss='2344845664', anio=1927]], 1928=[Paciente [nombre='Ariel', apellido='Sharon', nuss='5460434336', anio=1928]], 1931=[Paciente [nombre='Adolfo', apellido='Perez-Esquivel', nuss='0837990171', anio=1931]], 1937=[Paciente [nombre='Anthony', apellido='Hopkins', nuss='8059089594', anio=1937]], 1938=[Paciente [nombre='Annan', apellido='Kofi', nuss='9428986747', anio=1938]], 1940=[Paciente [nombre='Al', apellido='Pacino', nuss='7611603235', anio=1940]], 1943=[Paciente [nombre='Angelica', apellido='Maria', nuss='5038997426', anio=1943]], 1947=[Paciente [nombre='Arnold', apellido='Schwarzenegger', nuss='7215395217', anio=1947]], 1948=[Paciente [nombre='Al', apellido='Gore', nuss='4262893352', anio=1948]], 1951=[Paciente [nombre='Anatoly', apellido='Karpov', nuss='5057523820', anio=1951]], 1954=[Paciente [nombre='Angela', apellido='Merkel', nuss='3856312192', anio=1954]], 1960=[Paciente [nombre='Antonio', apellido='Banderas', nuss='7169050132', anio=1960], Paciente [nombre='Ayrton', apellido='Senna', nuss='3262532049', anio=1960]], 1968=[Paciente [nombre='Ashley', apellido='Judd', nuss='7922298376', anio=1968]], 1971=[Paciente [nombre='Adriana', apellido='Karenbeu', nuss='0561128832', anio=1971]], 1975=[Paciente [nombre='Angelina', apellido='Jolie', nuss='8167807396', anio=1975]], 1981=[Paciente [nombre='Anna', apellido='Kournikova', nuss='8418100035', anio=1981], Paciente [nombre='Alessandra', apellido='Ambrosio', nuss='8993637613', anio=1981], Paciente [nombre='Alicia', apellido='Keys', nuss='4488106841', anio=1981]], 1984=[Paciente [nombre='Avril', apellido='Lavigne', nuss='7867894312', anio=1984]]}
+ {1678=1, 1723=1, 1743=1, 1775=1, 1781=1, 1788=1, 1802=1, 1809=1, 1854=1, 1860=1, 1870=1, 1875=2, 1879=1, 1881=1, 1889=1, 1890=1, 1896=1, 1898=1, 1899=2, 1900=1, 1908=1, 1913=1, 1915=2, 1916=1, 1923=2, 1926=1, 1927=1, 1928=1, 1931=1, 1937=1, 1938=1, 1940=1, 1943=1, 1947=1, 1948=1, 1951=1, 1954=1, 1960=2, 1968=1, 1971=1, 1975=1, 1981=3, 1984=1}
+ * </pre>
+ */
